@@ -3,8 +3,9 @@
 mysql_count=`ps aux|grep mysql|grep -v grep|wc -l`
 if [ "$mysql_count" = 0 ]
 then
-#echo "Change the privilage of mysql folders..."
-#chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+echo "Change the privilage of mysql folders..."
+echo "Owner Changing can't be stored in basic image, so must run here"
+chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 sleep 3
 echo "Starting Mysql..."
 service mysql start
